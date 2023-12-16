@@ -1,0 +1,41 @@
+{% extends "kiyya/layout.html" %}
+{% load static %}
+{% block title %}Blog Post | {% endblock %}
+
+{% block body %}
+
+    <div class="container" style="width: 100%;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-inline-flex p-2 bd-highlight">
+        <div class="container-fluid">
+            <a class="btn btn-outline-primary btn-floating m-1" href="{% url 'index' %}"><strong>Kiyya's Poet</strong></a>
+        </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="zoom">
+                <h1 style="color: white;">BLOG POST</h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for blog in blog_list %}
+                <div class="card mb-4" style="box-shadow: 0 16px 48px #E3E7EB;">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ blog.title }}</h2>
+                        <p class="card-text text-muted h6">{{ blog.author }} | {{ blog.created_on}} </p>
+                        <p class="card-text">{{blog.content|slice:":200" }}</p>
+                        <a href="{% url 'details' blog.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+          
+        </div>
+    </div>
+{%endblock%}

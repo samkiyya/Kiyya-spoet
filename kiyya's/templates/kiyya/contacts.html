@@ -1,0 +1,93 @@
+{% extends "kiyya/layout.html" %}
+{% load static %}
+{% block title %}Contacts | {% endblock %}
+
+{% block body %}
+
+        <div class="container" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-inline-flex p-2 bd-highlight">
+            <div class="container-fluid">
+                <a class="btn btn-outline-primary btn-floating m-1" href="{% url 'index' %}"><strong>Kiyya's Poet</strong></a>
+            </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <header>
+                <div class="zoom">
+                    <h1 style="color: white;">CONTACT US</h1>
+                </div>
+            </header>
+        </div>
+
+          <!--Contact form with a textarea for contacting the Author-->
+        <div class="container py-4" style="background-color: gray; color: #ffffff; box-shadow: 0 16px 48px #E3E7EB;">
+
+                <!-- Bootstrap 5 starter form -->
+            <form id="contactForm" method="post">
+            {% csrf_token %}
+            
+                <div class="form-group">
+                    <label for="fname">Your Name</label>
+                    <input name="name" type="text" id="fname" class="form-control" placeholder="Your Name">
+
+                    <label for="exampleInputEmail">Email Address</label>
+                    <input name="email" class="form-control" id="exampleInputEmail" placeholder="Email Address" aria-describedby="emailHelp" data-sb-validations="required, email" />
+                    <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+
+                    <label class="form-label" for="message">Message</label>
+                    <textarea name="message" class="form-control" id="message" type="text" placeholder="Message" style="height: 20rem;" data-sb-validations="required"></textarea>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+
+                    <input type="submit" class="btn btn-primary btn-lg mt-1 ml-4" value="Submit">
+
+                </div>
+            
+            </form>
+          
+        </div>
+          
+          <!-- SB Forms JS -->
+          <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+        <div class="container" style="background-color: rgb(156, 132, 156); width:auto; text-align: center; color: white;">
+            <h2>Comments</h2>
+            <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="color: black;">
+                    <div class="item active">
+                    <h4>"The respond to my message was ontime.<br> I am so happy with the result!"<br><span>Mariam Grey, Texas, USA.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"I was so excited to get a message back"<br><span>Franco Bas, Paris, Italy</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"Quick reply!!!"<br><span>Lisa Mari, Johanasbour, South Africa</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"No waiting for long for a respond"<br><span>Aliyu Galadima, Niger State, Nigeria</span></h4>
+                    </div>
+                </div>
+        
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+
+{% endblock %}

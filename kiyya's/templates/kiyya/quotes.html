@@ -1,0 +1,79 @@
+{% extends "kiyya/layout.html" %}
+{% load static %}
+{% block title %}Quotes | {% endblock %}
+
+{% block body %}
+
+        <div class="container" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-inline-flex p-2 bd-highlight">
+            <div class="container-fluid">
+                <a class="btn btn-outline-primary btn-floating m-1" href="{% url 'index' %}"><strong>Kiyya's Poet</strong></a>
+            </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <header>
+                <div class="zoom">
+                    <h1 style="color: white;">WELCOME TO MOTIVATIONAL QUOTES</h1>
+                </div>
+            </header>
+        </div>
+
+        <section>
+            <div class="container" style="width: 100%;">
+                <div class="row mx-3 mb-3">
+                    {% for quote in quotes %}
+                    <div class="card mx-3" style="width: 18rem; box-shadow: 0 16px 48px #E3E7EB;">
+                        <img src="{{ quote.image.url }}" class="card-img-top" alt="{{ quote.image.url }}">
+                        <div class="card-body" style="background-color: rgb(220, 99, 99);">
+                        <h5 class="card-title" style="color: blue;"><b>{{ quote.title }}</b></h5>
+                        <hr>
+                        <p class="card-text" style="color: white;">{{ quote.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <div class="container" style="background-color: rgb(156, 132, 156); width:auto; text-align: center; color: #E3E7EB;">
+            <h2>Comments</h2>
+            <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="color: black;">
+                    <div class="item active">
+                    <h4>"This quotes are the best. I am so happy to be here!"<br><span>Joel Bones, Brokelyn, USA.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"What!!! this as change my thinking"<br><span>Everest John, Island, Norway.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"Life as been easy with your quotes"<br><span>Emma George, Vegas, USA.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"Straight and clear lines"<br><span>Doe Sadiq, London, UK.</span></h4>
+                    </div>
+                </div>
+        
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+
+{% endblock %}

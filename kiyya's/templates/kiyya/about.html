@@ -1,0 +1,88 @@
+{% extends "kiyya/layout.html" %}
+{% load static %}
+
+{% block title %}About | {% endblock %}
+
+{% block body %}
+
+        <div class="container" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-inline-flex p-2 bd-highlight">
+            <div class="container-fluid">
+                <a class="btn btn-outline-primary btn-floating m-1" href="{% url 'index' %}"><strong>Kiyya's Poet</strong></a>
+            </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <header>
+                <div class="zoom">
+                    <h1 style="color: white;">ABOUT</h1>
+                </div>
+            </header>
+        </div>
+
+        <div class="container" style="text-align:center; box-shadow: 0 16px 48px #E3E7EB;">
+            <div class="column mb-3">
+                <div class="card">
+                  <img src="{% static 'kiyya/media/qingsabout.jpg' %}" alt="thumbnail" style="width:20%; align-self: center;">
+                  <div class="container">
+                    <h2>Tilanesh Teyik (Kiyya's)</h2>
+                    <p class="title"><strong>Owner</strong></p>
+                    <p>Phenomenon Poetic, talented creative, lyricalist.</p>
+                    <p><strong>Kiyyaspoet: </strong>Is a true definition that gives overview expressions from the heart and soul,<br>
+                        which defines us as humans. In the creation of Man, Love, Emotions, Struggles, and Affections<br>
+                        was something that makes us different from any other living things in the universe.<br> 
+                        This App was designed to help mankind to learn and to appreciate what love is.</p>
+                        <p>Here at <strong>Kiyyaspoet</strong> you are about to experience the true nature of human expressions<br>
+                        and motivational quotes that will uplift the mind and growth. Man can't do it alone <br>
+                        and so we all need words that can change our mindsets, words that can encourage us <br>
+                        to strives. Motivational quotes are words that filled our souls with other sights to <br>
+                        view all our difficulty in life and interwhine it to focus on life.</p>
+                        <p>This is the reason why <strong>Kiyyaspoet</strong> came to an existance, to support and ellivate mankind <br>
+                        to be hopeful in Love and growth. Stay with us as we give out new updates for both poets <br>
+                        and motivational quotes to spicy up all of the emotional and life struggles.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="background-color: rgb(156, 132, 156); width:auto; color: white;">
+            <h2>Comments</h2>
+            <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="color: black;">
+                    <div class="item active">
+                    <h4>"This is the best thing you done and it as impact my life.<br> I am so happy with the result!"<br><span>Michael Roe, New York, USA.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"One good thing... WOW!!"<br><span>John Doe, ATL, USA.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"Could I... BE any more happy with this site? Lol!"<br><span>Chandler Bing, Ontario, Canada.</span></h4>
+                    </div>
+                    <div class="item">
+                    <h4>"We appreciate your work... WOW!!"<br><span>Kelly Jones, CA, USA.</span></h4>
+                    </div>
+                </div>
+        
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+      
+
+{% endblock %}

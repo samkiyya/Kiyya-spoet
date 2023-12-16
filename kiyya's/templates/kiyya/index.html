@@ -1,0 +1,137 @@
+{% extends "kiyya/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+   
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'poets' %}">Poems</a>
+                <a href="{% url 'quotes' %}">Motivational Quotes</a>
+                <a href="{% url 'videos' %}">Videos</a>
+                <a href="{% url 'blogs' %}">Blog Post</a>
+                <a href="{% url 'contacts' %}">Contacts</a>
+            </div>
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">☰ Kiyya's Poet</button>
+            </div>
+
+            <script>
+                function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                }
+                
+                function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+                }
+            </script>
+
+            <div class="container">
+                <header>
+                    <div class="zoom">
+                        <h1 style="color: white;">KIYYA'S POETS AND MOTIVATIONAL QUOTES</h1>
+                    </div>
+                </header>
+            </div>
+    <section>
+        <div class="container" style="width: 100%;">
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="card mx-3" style="width: 18rem; box-shadow: 0 16px 48px #E3E7EB;">
+                    <img src="{% static 'kiyya/media/qingflo.png' %}" class="card-img-top" alt="home">
+                    <div class="card-body" style="background-color: rgb(157, 145, 145);">
+                    <h5 class="card-title"><strong>Poems</strong></h5>
+                    <p class="card-text">For every sensations comes wih the beauty of the heart, lyrics that touches the soul, love that units mankind.</p>
+                    <a href="{% url 'poets' %}" class="btn btn-primary d-flex flex-wrap">More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card mx-3" style="width: 18rem; box-shadow: 0 16px 48px #E3E7EB;">
+                    <img src="{% static 'kiyya/media/qingmoti.png' %}" class="card-img-top" alt="home">
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>Motivational Quotes</strong></b></h5>
+                    <p class="card-text">Courage is not just only by actions but words can be the most strongest tools to push a man to his destination.</p>
+                    <a href="{% url 'quotes' %}" class="btn btn-primary d-flex flex-wrap">More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card mx-3" style="width: 18rem; box-shadow: 0 16px 48px #E3E7EB;">
+                    <img src="{% static 'kiyya/media/qingvideo.png' %}" class="card-img-top" alt="home">
+                    <div class="card-body" style="background-color: rgb(157, 145, 145);">
+                    <h5 class="card-title"><strong>Videos</strong></h5>
+                    <p class="card-text">Watch super exclusive videos from poems sessions and power to rise motivational story line to uplift you.</p>
+                    <a href="{% url 'videos' %}" class="btn btn-primary d-flex flex-wrap">More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card mx-3" style="width: 18rem; box-shadow: 0 16px 48px #E3E7EB;">
+                    <img src="{% static 'kiyya/media/qingblog.png' %}" class="card-img-top" alt="home">
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>Blog Post</strong></h5>
+                    <p class="card-text">More excitement as you read more topics, stories, showing the over views of humanity from our blogger.</p>
+                    <a href="{% url 'blogs' %}" class="btn btn-primary d-flex flex-wrap">More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="container">
+            <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'kiyya/media/qingsdisplay.jpg' %}" class="d-block w-5%" style="width: 30%;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h1 class="btn btn-outline-primary"><strong>Recent Updates</strong></h1>
+                    <p>Post recent content on regular bases,<br> <span>so always click in to see more favorite lines.</span></p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'kiyya/media/qingquo4.png' %}" class="d-block w-5%" style="width: 30%;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h1 class="btn btn-outline-danger"><strong>Mission</strong></h1>
+                    <p>On a mission to change humanity and increase<br> the beauty of the heart to respect Love and Affections.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'kiyya/media/qingsimg2.png' %}" class="d-block w-5%" style="width: 30%;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h1 class="btn btn-outline-info"><strong>No Regrets</strong></h1>
+                    <p>Learn not to regret anything in life<br> not even our actions that was misunderstood.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'kiyya/media/qingquo.png' %}" class="d-block w-5%" style="width: 30%;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h1 class="btn btn-outline-success"><strong>Time</strong></h1>
+                    <p>Time is one thing that can never stop for no man,<br> so why wasting it when you know it waits for no one.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'kiyya/media/qingwat.png' %}" class="d-block w-5%" style="width: 30%;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h1 class="btn btn-outline-warning"><strong>Growth</strong></h1>
+                    <p>Some people fail in growing cause of their own hinderance,<br> believe we all stand a chance to grow and develop. So take charge of your own growth.</p>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+
+
+{% endblock %}
